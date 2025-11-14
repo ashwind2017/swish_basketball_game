@@ -32,12 +32,16 @@ A complete full-stack interactive basketball free throw game with:
 
 ## How to Run
 
+**Prerequisites:** Python 3.11 or 3.12, Node.js 22+
+
 ### Terminal 1 - Backend
 ```bash
 cd backend
-source venv/bin/activate  # Already created
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+source venv/bin/activate  # Make sure venv was created with python3.11
+uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
+
+**Note:** Omitting `--reload` prevents startup issues. Add it only if you need auto-reload during development.
 
 Backend will be available at:
 - API: http://localhost:8000
@@ -46,6 +50,7 @@ Backend will be available at:
 ### Terminal 2 - Frontend
 ```bash
 cd frontend
+nvm use 22  # If using nvm, switch to Node 22
 npm run dev
 ```
 
@@ -164,20 +169,40 @@ Frontend will be available at: http://localhost:5173
 ## Troubleshooting
 
 ### Backend won't start
+
+**If uvicorn hangs or doesn't respond:**
+- Make sure you're using **Python 3.11 or 3.12** (not 3.13)
+- Recreate venv with correct Python version:
 ```bash
 cd backend
+rm -rf venv
+python3.11 -m venv venv  # or python3.12
 source venv/bin/activate
 pip install -r requirements.txt
+uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
 ### Frontend won't start
+
+**If you see "crypto.hash is not a function" error:**
+- You need **Node.js 22+** for Vite 7.x compatibility
+- Upgrade Node using nvm:
 ```bash
+nvm install 22
+nvm use 22
 cd frontend
+rm -rf node_modules package-lock.json
 npm install
 npm run dev
 ```
 
 ### Port already in use
+```bash
+# Kill processes on ports
+lsof -ti:8000 | xargs kill -9
+lsof -ti:5173 | xargs kill -9
+```
+
 - Backend: Change port in uvicorn command
 - Frontend: Vite will auto-increment if 5173 is busy
 

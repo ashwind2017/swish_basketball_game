@@ -66,8 +66,8 @@ swish-game/
 ## Installation & Setup
 
 ### Prerequisites
-- Python 3.8 or higher
-- Node.js 18 or higher
+- **Python 3.11 or 3.12** (Python 3.13 not currently supported due to uvicorn compatibility issues)
+- **Node.js 22 or higher** (Required for Vite 7.x)
 - npm or yarn
 
 ### Backend Setup
@@ -79,7 +79,7 @@ cd backend
 
 2. Create a virtual environment:
 ```bash
-python -m venv venv
+python3.11 -m venv venv  # or python3.12
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
@@ -95,8 +95,10 @@ cp .env.example .env
 
 5. Start the backend server:
 ```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
+
+**Note:** The `--reload` flag is optional for development but may cause issues. Use the simple command above for reliable startup.
 
 The API will be available at `http://localhost:8000`
 API documentation (Swagger UI) at `http://localhost:8000/docs`
@@ -106,6 +108,11 @@ API documentation (Swagger UI) at `http://localhost:8000/docs`
 1. Navigate to the frontend directory:
 ```bash
 cd frontend
+```
+
+**Note:** If you're using nvm and need Node 22:
+```bash
+nvm use 22  # or: nvm install 22 && nvm use 22
 ```
 
 2. Install dependencies:
