@@ -139,7 +139,7 @@ The application will be available at `http://localhost:5173`
    - Longer drag = more power
    - Angle determines trajectory
    - Release to shoot
-5. **Score points** - Swish shots earn 3 points, rim shots earn 2 points
+5. **Score points** - Swish shots earn 3 points, rim shots and backboard shots earn 2 points
 6. **Build streaks** - Consecutive makes earn bonus points
 7. **View stats** - Check your shot chart, accuracy, and global ranking
 
