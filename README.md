@@ -19,9 +19,7 @@ A full-stack interactive basketball free throw game built with React, TypeScript
 - **Comprehensive statistics tracking** - Shot charts, accuracy, streaks, and more
 - **Global leaderboards** - Compete with other players across all game modes
 - **Persistent user accounts** - Track progress across sessions
-- **Shot replay system** - Full trajectory data stored for each shot
 - **Difficulty levels** - Easy, Medium, and Hard modes
-- **Responsive design** - Works on desktop and tablet devices
 
 ## Tech Stack
 
