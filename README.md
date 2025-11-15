@@ -248,10 +248,6 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 - Advanced physics (wind, spin)
 - Password protected authentication using JWT
 
-## Loom Walkthrough
-
-[Link to be added after recording]
-
 ## Author
 
 Ashwin Dandapani
