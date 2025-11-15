@@ -246,6 +246,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 - Tournament mode
 - Customizable characters/balls
 - Advanced physics (wind, spin)
+- Password protected authentication using JWT
 
 ## Loom Walkthrough
 
@@ -254,10 +255,6 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 ## Author
 
 Ashwin Dandapani
-- GitHub: [Your GitHub]
-- LinkedIn: [Your LinkedIn]
+- GitHub: https://github.com/ashwind2017
+- LinkedIn: https://www.linkedin.com/in/ashwin-dandapani
 - Email: ashwind2017@gmail.com
-
-## License
-
-MIT License - Feel free to use this project for learning or as a base for your own games!
